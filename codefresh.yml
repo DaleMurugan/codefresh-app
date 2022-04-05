@@ -17,7 +17,6 @@ steps:
     image: node:8.16
     commands:
       - npm install
-      - npm test
     environment:
       - CI=true
   MyAppDockerImage:
