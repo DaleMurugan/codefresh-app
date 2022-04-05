@@ -19,9 +19,9 @@ steps:
       - npm install
     environment:
       - CI=true
-  MyAppDockerImage:
-    title: Building Docker Image
-    type: build
+  MyReactBuild:
+    title: Packaging application
+    image: node:8.16
     stage: build
     commands:
       - npm build
