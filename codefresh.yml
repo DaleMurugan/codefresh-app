@@ -19,9 +19,11 @@ steps:
       - npm install
     environment:
       - CI=true
-  MyReactBuild:
-    title: Packaging application
+  MyAppDockerImage:
+    title: Building Docker Image
+    type: build
     stage: build
-    image: node:8.16
-    commands:
-      - npm run build
+    image_name: codefresh-app
+    working_directory: ./
+    tag: "with-nginx"
+    dockerfile: Dockerfile
