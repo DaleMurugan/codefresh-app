@@ -23,7 +23,5 @@ steps:
     title: Building Docker Image
     type: build
     stage: build
-    image_name: react-sample-app
-    working_directory: ./
-    tag: "with-nginx"
-    dockerfile: Dockerfile
+    commands:
+      - npm build
