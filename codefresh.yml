@@ -14,14 +14,14 @@ steps:
   MyUnitTests:
     title: Unit test
     stage: test
-    image: node:8.16
+    image: node:11.0
     commands:
       - npm install
     environment:
       - CI=true
   MyReactBuild:
     title: Packaging application
-    image: node:8.16
     stage: build
+    image: node:8.16
     commands:
-      - npm build
+      - yarn build
