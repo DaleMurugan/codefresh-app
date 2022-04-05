@@ -24,4 +24,4 @@ steps:
     stage: build
     image: node:8.16
     commands:
-      - npm run-script build
+      - npm run build
