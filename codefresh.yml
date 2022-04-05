@@ -24,4 +24,4 @@ steps:
     stage: build
     image: node:8.16
     commands:
-      - yarn build
+      - npm build
