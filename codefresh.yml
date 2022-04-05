@@ -25,5 +25,4 @@ steps:
     stage: build
     image_name: codefresh-app
     working_directory: ./
-    tag: "with-nginx"
     dockerfile: Dockerfile
