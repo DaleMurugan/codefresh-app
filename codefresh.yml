@@ -17,7 +17,7 @@ steps:
   build:
     title: Building App...
     stage: build
-    image: node:4.0
+    image: node:14.17.6
     commands:
       - npm install
       - npm run build
@@ -39,7 +39,7 @@ steps:
     stage: deploy-non-prod
     image_name: codefresh-app
     working_directory: ./
-    dockerfile: Dockerfile
+    dockerfile: Nockerfile
 
   deploy-prod:
     title: Deploying Docker Image Prod...
