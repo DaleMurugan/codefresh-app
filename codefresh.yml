@@ -1,7 +1,7 @@
 version: "1.0"
 stages:
   - clone
-  - build
+  # - build
   - test
   - deploy
 steps:
@@ -13,15 +13,15 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
 
-  build:
-    title: Building app...
-    stage: build
-    image: node:14.17.6
-    commands:
-      - npm install
-      - npm run build
-    environment:
-      - CI=true
+  # build:
+  #   title: Building app...
+  #   stage: build
+  #   image: node:14.17.6
+  #   commands:
+  #     - npm install
+  #     - npm run build
+  #   environment:
+  #     - CI=true
   test:
     title: Conducting unit tests...
     stage: test
