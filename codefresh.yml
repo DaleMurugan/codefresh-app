@@ -13,7 +13,7 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
 
-  test:
+  build:
     title: Building App...
     stage: build
     image: node:14.17.6
@@ -23,7 +23,7 @@ steps:
     environment:
       - CI=true
 
-  MyAppDockerImage:
+  deploy:
     title: Deploying Docker Image...
     type: build
     stage: deploy
