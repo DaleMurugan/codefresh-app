@@ -35,7 +35,7 @@ steps:
   Deploy:
     title: Deploying to Docker Image
     type: build
-    stage: deploy
+    stage: build
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
