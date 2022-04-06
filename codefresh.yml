@@ -5,18 +5,18 @@ stages:
   - build
   - deploy
 steps:
-  clone_app:
+  main_clone:
     title: Cloning main repository...
     stage: clone
     type: git-clone
-    repo: "DaleMurugan/codefresh-app"
+    repo: DaleMurugan/codefresh-app
     revision: "${{CF_BRANCH}}"
-    git: "dale-git"
+    git: dale-git
 
-  build_app:
+  build:
     title: Building App...
     stage: build
-    image: node:14.17.6
+    image: "node:14.17.6"
     commands:
       - npm install
       - npm run build
@@ -34,7 +34,7 @@ steps:
   #   environment:
   #     - CI=true
 
-  deploy_app:
+  deploy:
     title: Deploying Docker Image...
     type: build
     stage: deploy
