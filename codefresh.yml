@@ -11,7 +11,6 @@ steps:
     repo: "DaleMurugan/codefresh-app"
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
-
   Tests:
     title: Unit test
     stage: test
@@ -21,17 +20,6 @@ steps:
       - npm run test
     environment:
       - CI=true
-
-  Build:
-    title: Build
-    stage: build
-    image: node:14.17.6
-    commands:
-      - npm install
-      - npm run build
-    environment:
-      - CI=true
-
   Deploy:
     title: Deploying to Docker Image
     type: build
