@@ -13,8 +13,8 @@ steps:
     git: "dale-git"
 
   test:
-    title: Conducting unit tests...
-    stage: test
+    title: Building App...
+    stage: build
     image: node:14.17.6
     commands:
       - npm install
@@ -23,9 +23,9 @@ steps:
       - CI=true
 
   MyAppDockerImage:
-    title: Building Docker Image...
+    title: Deploying Docker Image...
     type: build
-    stage: build
+    stage: deploy
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
