@@ -44,7 +44,7 @@ steps:
   deploy-prod:
     title: Deploying Docker Image Prod...
     type: build
-    stage: deploy-deploy-prod
+    stage: deploy-prod
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
