@@ -3,7 +3,8 @@ stages:
   - clone
   - build
   - test
-  - deploy
+  - deploy-non-prod
+  - deploy-prod
 steps:
   main_clone:
     title: Cloning main repository...
@@ -32,10 +33,18 @@ steps:
     environment:
       - CI=true
 
-  deploy:
-    title: Deploying Docker Image...
+  deploy-non-prod:
+    title: Deploying Docker Image Non-Prod...
     type: build
-    stage: deploy
+    stage: deploy-non-prod
+    image_name: codefresh-app
+    working_directory: ./
+    dockerfile: Dockerfile
+
+  deploy-prod:
+    title: Deploying Docker Image Prod...
+    type: build
+    stage: deploy-deploy-prod
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
