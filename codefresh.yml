@@ -17,7 +17,7 @@ steps:
   build:
     title: Building App...
     stage: build
-    image: "node:14.17.6"
+    image: node:4.0
     commands:
       - npm install
       - npm run build
