@@ -12,7 +12,7 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
   MyUnitTests:
-    title: Unit test
+    title: Conducting unit tests...
     stage: test
     image: node:14.17.6
     commands:
@@ -21,7 +21,7 @@ steps:
     environment:
       - CI=true
   MyAppDockerImage:
-    title: Building Docker Image
+    title: Building Docker Image...
     type: build
     stage: build
     image_name: codefresh-app
