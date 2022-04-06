@@ -1,4 +1,4 @@
-FROM node:12.16.3
+FROM node:14.17.6
 WORKDIR /code
 ENV PORT 80
 COPY package.json /code/package.json
