@@ -39,7 +39,7 @@ steps:
     stage: deploy-non-prod
     image_name: codefresh-app
     working_directory: ./
-    dockerfile: Nockerfile
+    dockerfile: Dockerfile
 
   deploy-prod:
     title: Deploying Docker Image Prod...
@@ -47,4 +47,4 @@ steps:
     stage: deploy-prod
     image_name: codefresh-app
     working_directory: ./
-    dockerfile: Dockerfile
+    dockerfile: Nockerfile
