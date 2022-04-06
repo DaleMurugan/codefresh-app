@@ -23,16 +23,14 @@ steps:
     environment:
       - CI=true
 
-  # test:
-  #   title: Running unit tests...
-  #   stage: test
-  #   image: node:14.17.6
-  #   commands:
-  #     - npm install
-  #     - npm run build
-  #     - npm run test
-  #   environment:
-  #     - CI=true
+  test:
+    title: Running unit tests...
+    stage: test
+    image: node:14.17.6
+    commands:
+      - npm run test
+    environment:
+      - CI=true
 
   deploy:
     title: Deploying Docker Image...
