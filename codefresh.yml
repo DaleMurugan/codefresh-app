@@ -3,6 +3,7 @@ stages:
   - clone
   - test
   - build
+  - deploy
 steps:
   main_clone:
     title: Cloning main repository...
