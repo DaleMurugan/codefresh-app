@@ -12,7 +12,7 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
 
-  MyUnitTests:
+  test:
     title: Conducting unit tests...
     stage: test
     image: node:14.17.6
