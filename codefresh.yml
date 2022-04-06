@@ -24,7 +24,7 @@ steps:
 
   Build:
     title: Build
-    stage: test
+    stage: build
     image: node:14.17.6
     commands:
       - npm install
@@ -35,7 +35,7 @@ steps:
   Deploy:
     title: Deploying to Docker Image
     type: build
-    stage: build
+    stage: deploy
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
