@@ -1,8 +1,7 @@
-FROM node:8.16 as build-deps
-WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json ./
-COPY package-lock.json ./
+FROM node:12.16.3
+WORKDIR /code
+ENV PORT 80
+COPY package.json /code/package.json
 RUN npm install
-COPY . ./
+COPY . /code
 RUN npm run build
