@@ -5,4 +5,3 @@ COPY package.json /code/package.json
 RUN npm install
 COPY . /code
 RUN npm run build
-RUN npm start
