@@ -1,11 +1,10 @@
 version: "1.0"
 stages:
   - clone
-  # - build
   - test
-  - deploy
+  - build
 steps:
-  clone:
+  main_clone:
     title: Cloning main repository...
     stage: clone
     type: git-clone
@@ -13,27 +12,20 @@ steps:
     revision: "${{CF_BRANCH}}"
     git: "dale-git"
 
-  # build:
-  #   title: Building app...
-  #   stage: build
-  #   image: node:14.17.6
-  #   commands:
-  #     - npm install
-  #     - npm run build
-  #   environment:
-  #     - CI=true
-  test:
+  MyUnitTests:
     title: Conducting unit tests...
     stage: test
     image: node:14.17.6
     commands:
       - npm install
       - npm run test
+    environment:
+      - CI=true
 
-  deploy:
+  MyAppDockerImage:
     title: Building Docker Image...
     type: build
-    stage: deploy
+    stage: build
     image_name: codefresh-app
     working_directory: ./
     dockerfile: Dockerfile
