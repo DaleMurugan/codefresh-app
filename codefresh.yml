@@ -39,6 +39,7 @@ steps:
     stage: deploy-non-prod
     image_name: codefresh-app
     working_directory: ./
+    tag: "with-nginx"
     dockerfile: Dockerfile
 
   deploy-prod:
@@ -47,4 +48,5 @@ steps:
     stage: deploy-prod
     image_name: codefresh-app
     working_directory: ./
+    tag: "with-nginx"
     dockerfile: Dockerfile
