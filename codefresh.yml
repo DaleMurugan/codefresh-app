@@ -35,7 +35,7 @@ steps:
 
   deploy-non-prod:
     title: Deploying Docker Image Non-Prod...
-    type: build
+    type: deploy
     stage: deploy-non-prod
     image_name: codefresh-app
     working_directory: ./
@@ -44,7 +44,7 @@ steps:
 
   deploy-prod:
     title: Deploying Docker Image Prod...
-    type: build
+    type: deploy
     stage: deploy-prod
     image_name: codefresh-app
     working_directory: ./
