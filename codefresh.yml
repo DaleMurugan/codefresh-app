@@ -33,7 +33,7 @@ steps:
     stage: deploy-non-prod
     image: node:14.17.6
     commands:
-      - ./ci/scripts/alwaysPass.sh
+      - ./ci/scripts/failEveryMonday.sh
 
   deploy-prod:
     title: Deploying to production...
