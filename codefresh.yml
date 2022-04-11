@@ -33,11 +33,11 @@ steps:
     stage: deploy-non-prod
     image: node:14.17.6
     commands:
-      - ./ci/scripts/failEveryMonday.sh
+      - ./ci/scripts/failEveryTuesday.sh
 
   deploy-prod:
     title: Deploying to production...
     stage: deploy-prod
     image: node:14.17.6
     commands:
-      - ./ci/scripts/failOnThe11th.sh
+      - ./ci/scripts/failOnThe15th.sh

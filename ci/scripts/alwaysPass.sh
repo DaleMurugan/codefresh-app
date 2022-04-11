@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "#always pass"
+echo "# always pass"
 exit 0
