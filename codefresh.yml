@@ -19,6 +19,7 @@ steps:
     stage: build
     image: node:14.17.6
     commands:
+      - ./ci/scripts/exit.sh
       - npm install
       - npm run build
     environment:
