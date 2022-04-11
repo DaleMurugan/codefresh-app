@@ -34,7 +34,7 @@ steps:
 
   deploy-non-prod:
     title: Deploying to non-prod...
-    stage: test
+    stage: deploy-non-prod
     image: node:14.17.6
     commands:
       - ./ci/scripts/pass.sh
@@ -43,7 +43,7 @@ steps:
 
   deploy-prod:
     title: Deploying to production...
-    stage: test
+    stage: deploy-prod
     image: node:14.17.6
     commands:
       - ./ci/scripts/exit.sh
