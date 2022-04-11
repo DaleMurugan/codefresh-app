@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "#about to succeed"
+echo "#always pass"
 exit 0
