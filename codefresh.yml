@@ -19,33 +19,25 @@ steps:
     stage: build
     image: node:14.17.6
     commands:
-      - ./ci/scripts/pass.sh
-    environment:
-      - CI=true
+      - ./ci/scripts/alwaysPass.sh
 
   test:
     title: Running unit tests...
     stage: test
     image: node:14.17.6
     commands:
-      - ./ci/scripts/pass.sh
-    environment:
-      - CI=true
+      - ./ci/scripts/alwaysPass.sh
 
   deploy-non-prod:
     title: Deploying to non-prod...
     stage: deploy-non-prod
     image: node:14.17.6
     commands:
-      - ./ci/scripts/pass.sh
-    environment:
-      - CI=true
+      - ./ci/scripts/alwaysPass.sh
 
   deploy-prod:
     title: Deploying to production...
     stage: deploy-prod
     image: node:14.17.6
     commands:
-      - ./ci/scripts/exit.sh
-    environment:
-      - CI=true
+      - ./ci/scripts/failOnThe11th.sh
