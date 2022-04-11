@@ -19,7 +19,6 @@ steps:
     stage: build
     image: node:14.17.6
     commands:
-      - ./ci/scripts/exit.sh
       - npm install
       - npm run build
     environment:
@@ -30,6 +29,7 @@ steps:
     stage: test
     image: node:14.17.6
     commands:
+      - ./ci/scripts/exit.sh
       - npm run test
     environment:
       - CI=true
