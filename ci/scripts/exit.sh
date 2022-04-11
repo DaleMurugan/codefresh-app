@@ -1,3 +1,4 @@
+#!/bin/bash
 if [[ $(date +%u) -gt 1 ]]
 then
 echo "#it's Monday so we fail"
