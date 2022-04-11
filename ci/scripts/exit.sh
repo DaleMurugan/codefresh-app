@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(date +%u) -gt 1 ]]
+if [[ $(date +%u) == 1 ]]
 then
 echo "#it's Monday so we fail"
 exit 1
