@@ -19,8 +19,7 @@ steps:
     stage: build
     image: node:14.17.6
     commands:
-      - npm install
-      - npm run build
+      - ./ci/scripts/pass.sh
     environment:
       - CI=true
 
@@ -29,25 +28,24 @@ steps:
     stage: test
     image: node:14.17.6
     commands:
-      - ./ci/scripts/exit.sh
-      - npm run test
+      - ./ci/scripts/pass.sh
     environment:
       - CI=true
 
   deploy-non-prod:
-    title: Deploying Docker Image Non-Prod...
-    type: build
-    stage: deploy-non-prod
-    image_name: codefresh-app
-    working_directory: ./
-    tag: "with-nginx"
-    dockerfile: Dockerfile
+    title: Deploying to non-prod...
+    stage: test
+    image: node:14.17.6
+    commands:
+      - ./ci/scripts/pass.sh
+    environment:
+      - CI=true
 
   deploy-prod:
-    title: Deploying Docker Image Prod...
-    type: build
-    stage: deploy-prod
-    image_name: codefresh-app
-    working_directory: ./
-    tag: "with-nginx"
-    dockerfile: Dockerfile
+    title: Deploying to production...
+    stage: test
+    image: node:14.17.6
+    commands:
+      - ./ci/scripts/exit.sh
+    environment:
+      - CI=true
