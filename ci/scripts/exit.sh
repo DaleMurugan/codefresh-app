@@ -1,2 +1,2 @@
 echo "#About to fail"
-exit -1
+exit 1
